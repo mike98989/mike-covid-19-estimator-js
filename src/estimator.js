@@ -6,8 +6,8 @@ const covid19ImpactEstimator = (data) => {
   const severeImpactData = {};
 
   // Impact Data
-  impactData.currentlyInfected = (input.reportedCases * 10) * 1;
-  impactData.infectionsByRequestedTime = impactData.currentlyInfected * 2 ** 10;
+  impactData.currentlyInfected = input.reportedCases * 10;
+  impactData.infectionsByRequestedTime = impactData.currentlyInfected * 1024;
 
   // Severe Impact Data
   severeImpactData.currentlyInfected = input.reportedCases * 50;
@@ -16,11 +16,11 @@ const covid19ImpactEstimator = (data) => {
   // CHALLENGE 2
   // Impact Data
   impactData.severeCasesByRequestedTime = impactData.infectionsByRequestedTime * (15 / 100);
-  impactData.hospitalBedsByRequestedTime = data.hospitalBedsByRequestedTime - impactData.severeCasesByRequestedTime;
+  impactData.hospitalBedsByRequestedTime = input.hospitalBedsByRequestedTime - impactData.severeCasesByRequestedTime;
 
   // Severe Impact Data
   severeImpactData.severeCasesByRequestedTime = severeImpactData.infectionsByRequestedTime * (15 / 100);
-  severeImpactData.hospitalBedsByRequestedTime = data.hospitalBedsByRequestedTime - severeImpactData.severeCasesByRequestedTime;
+  severeImpactData.hospitalBedsByRequestedTime = input.hospitalBedsByRequestedTime - severeImpactData.severeCasesByRequestedTime;
 
   // CHALLENGE 3
   // Impact Data
