@@ -2,8 +2,14 @@
 const covid19ImpactEstimator = (data) => {
   const input = data;
   // CHALLENGE 1
-  const impactData = {};
-  const severeImpactData = {};
+  const impactData = {
+    currentlyInfected: '', infectionsByRequestedTime: '', severeCasesByRequestedTime: '', hospitalBedsByRequestedTime: '', casesForICUByRequestedTime: '', casesForVentilatorsByRequestedTime: '', dollarsInFlight: ''
+  };
+  const severeImpactData = {
+    currentlyInfected: '', infectionsByRequestedTime: '', severeCasesByRequestedTime: '', hospitalBedsByRequestedTime: '', casesForICUByRequestedTime: '', casesForVentilatorsByRequestedTime: '', dollarsInFlight: ''
+  };
+
+  // const severeImpactData = {};
 
   // Impact Data
   impactData.currentlyInfected = input.reportedCases * 10;
