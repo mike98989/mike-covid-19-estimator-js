@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 const covid19ImpactEstimator = (data) => {
-  const input = data;
+  const input = JSON.parse(data);
   // CHALLENGE 1
   const impactData = {
     currentlyInfected: '', infectionsByRequestedTime: '', severeCasesByRequestedTime: '', hospitalBedsByRequestedTime: '', casesForICUByRequestedTime: '', casesForVentilatorsByRequestedTime: '', dollarsInFlight: ''
@@ -44,4 +44,5 @@ const covid19ImpactEstimator = (data) => {
     serverImpact: severeImpactData
   };
 };
+
 export default covid19ImpactEstimator;
